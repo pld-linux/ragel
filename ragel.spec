@@ -1,5 +1,5 @@
 Summary:	Ragel State Machine Compiler
-Summary(pl):	Ragel State Machine Compiler - kompilator automatów
+Summary(pl.UTF-8):   Ragel State Machine Compiler - kompilator automatÃ³w
 Name:		ragel
 Version:	5.16
 Release:	1
@@ -24,17 +24,17 @@ compile your finite state machines. Ragel also understands operators
 that insert function calls into machines and operators that control
 any non-determinism in machines.
 
-%description -l pl
-Ragel kompiluje automaty skoñczone z jêzyków regularnych do
-dzia³aj±cego kodu w C. Automaty Ragela nie tylko rozpoznaj± sekwencje
-bajtów, jak robi± to automaty wyra¿eñ regularnych, ale tak¿e wykonuj±
-kod w dowolnych miejscach podczas rozpoznawania jêzyka regularnego.
-Aby napisaæ jêzyk regularny zaczyna siê od prostego jêzyka regularnego
-i buduje wiêkszy przy u¿yciu operatorów sumy, z³±czenia, dope³nienia
-Kleene'a, przeciêcia i odejmowania. Jest to dok³adnie taki sposób, w
-jaki opisuje siê Ragelowi jak kompilowaæ automaty skoñczone. Ragel
-rozumie tak¿e operatory wstawiaj±ce wywo³ania funkcji do automatów i
-operatory steruj±ce niedeterminizmem w automatach.
+%description -l pl.UTF-8
+Ragel kompiluje automaty skoÅ„czone z jÄ™zykÃ³w regularnych do
+dziaÅ‚ajÄ…cego kodu w C. Automaty Ragela nie tylko rozpoznajÄ… sekwencje
+bajtÃ³w, jak robiÄ… to automaty wyraÅ¼eÅ„ regularnych, ale takÅ¼e wykonujÄ…
+kod w dowolnych miejscach podczas rozpoznawania jÄ™zyka regularnego.
+Aby napisaÄ‡ jÄ™zyk regularny zaczyna siÄ™ od prostego jÄ™zyka regularnego
+i buduje wiÄ™kszy przy uÅ¼yciu operatorÃ³w sumy, zÅ‚Ä…czenia, dopeÅ‚nienia
+Kleene'a, przeciÄ™cia i odejmowania. Jest to dokÅ‚adnie taki sposÃ³b, w
+jaki opisuje siÄ™ Ragelowi jak kompilowaÄ‡ automaty skoÅ„czone. Ragel
+rozumie takÅ¼e operatory wstawiajÄ…ce wywoÅ‚ania funkcji do automatÃ³w i
+operatory sterujÄ…ce niedeterminizmem w automatach.
 
 %prep
 %setup -q
