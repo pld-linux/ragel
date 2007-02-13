@@ -1,5 +1,5 @@
 Summary:	Ragel State Machine Compiler
-Summary(pl.UTF-8):   Ragel State Machine Compiler - kompilator automatów
+Summary(pl.UTF-8):	Ragel State Machine Compiler - kompilator automatów
 Name:		ragel
 Version:	5.16
 Release:	1
