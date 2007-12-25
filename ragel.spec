@@ -1,12 +1,12 @@
 Summary:	Ragel State Machine Compiler
 Summary(pl.UTF-8):	Ragel State Machine Compiler - kompilator automatów
 Name:		ragel
-Version:	5.16
+Version:	5.25
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.cs.queensu.ca/home/thurston/ragel/%{name}-%{version}.tar.gz
-# Source0-md5:	0c19b9fe68dd54efa64009dc85a08325
+# Source0-md5:	7f882023836167e33d4f96d7dde62f78
 URL:		http://www.cs.queensu.ca/home/thurston/ragel/
 BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,22 +41,22 @@ operatory sterujące niedeterminizmem w automatach.
 
 %build
 %configure
-%{__make}
-%{__make} -C doc ragel.1 rlcodegen.1
+%{__make} \
+	CFLAGS="%{rpmcflags}"
+%{__make} -C doc ragel.1 rlgen-cd.1 rlgen-java.1 rlgen-ruby.1 rlgen-dot.1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -s ragel/ragel $RPM_BUILD_ROOT%{_bindir}/ragel
-install -s rlcodegen/rlcodegen $RPM_BUILD_ROOT%{_bindir}/rlcodegen
+%{__make} install \
+	prefix=$RPM_BUILD_ROOT/usr
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
-install doc/ragel.1 $RPM_BUILD_ROOT%{_mandir}/man1/ragel.1
-install doc/rlcodegen.1 $RPM_BUILD_ROOT%{_mandir}/man1/rlcodegen.1
+install doc/r*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc CREDITS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
