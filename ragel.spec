@@ -1,12 +1,12 @@
 Summary:	Ragel State Machine Compiler
 Summary(pl.UTF-8):	Ragel State Machine Compiler - kompilator automatów
 Name:		ragel
-Version:	5.25
+Version:	6.3
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.cs.queensu.ca/home/thurston/ragel/%{name}-%{version}.tar.gz
-# Source0-md5:	7f882023836167e33d4f96d7dde62f78
+# Source0-md5:	61b53fb53c28b31bec28da8e7bd21351
 URL:		http://www.cs.queensu.ca/home/thurston/ragel/
 BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
