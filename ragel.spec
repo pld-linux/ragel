@@ -1,12 +1,12 @@
 Summary:	Ragel State Machine Compiler
 Summary(pl.UTF-8):	Ragel State Machine Compiler - kompilator automatów
 Name:		ragel
-Version:	6.3
+Version:	6.5
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.cs.queensu.ca/home/thurston/ragel/%{name}-%{version}.tar.gz
-# Source0-md5:	61b53fb53c28b31bec28da8e7bd21351
+# Source0-md5:	bb152087079ad7a545dcdc955b752301
 URL:		http://www.cs.queensu.ca/home/thurston/ragel/
 BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,12 +43,12 @@ operatory sterujące niedeterminizmem w automatach.
 %configure
 %{__make} \
 	CFLAGS="%{rpmcflags}"
-%{__make} -C doc ragel.1 rlgen-cd.1 rlgen-java.1 rlgen-ruby.1 rlgen-dot.1
+%{__make} -C doc ragel.1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	prefix=$RPM_BUILD_ROOT/usr
+	DESTDIR=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 install doc/r*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
