@@ -1,14 +1,14 @@
 Summary:	Ragel State Machine Compiler
 Summary(pl.UTF-8):	Ragel State Machine Compiler - kompilator automatów
 Name:		ragel
-Version:	6.7
+Version:	6.8
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://www.cs.queensu.ca/home/thurston/ragel/%{name}-%{version}.tar.gz
-# Source0-md5:	f4423e0d8a6538dd4e61498fcfad3cec
-URL:		http://www.cs.queensu.ca/home/thurston/ragel/
-BuildRequires:	bison
+Source0:	http://www.complang.org/ragel/%{name}-%{version}.tar.gz
+# Source0-md5:	1bb39745ac23da449019f9f2cb4b0d01
+URL:		http://www.complang.org/ragel/
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,16 +41,13 @@ operatory sterujące niedeterminizmem w automatach.
 
 %build
 %configure
-%{__make} \
-	CFLAGS="%{rpmcflags}"
-%{__make} -C doc ragel.1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
-install doc/r*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,5 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CREDITS ChangeLog README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/ragel
+%{_mandir}/man1/ragel.1*
