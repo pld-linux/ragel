@@ -1,13 +1,13 @@
 Summary:	Ragel State Machine Compiler
 Summary(pl.UTF-8):	Ragel State Machine Compiler - kompilator automatów
 Name:		ragel
-Version:	6.8
+Version:	6.10
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://www.complang.org/ragel/%{name}-%{version}.tar.gz
-# Source0-md5:	1bb39745ac23da449019f9f2cb4b0d01
-URL:		http://www.complang.org/ragel/
+Source0:	http://www.colm.net/files/ragel/%{name}-%{version}.tar.gz
+# Source0-md5:	748cae8b50cffe9efcaa5acebc6abf0d
+URL:		http://www.colm.net/open-source/ragel/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,6 +48,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/ragel
 
 %clean
 rm -rf $RPM_BUILD_ROOT
