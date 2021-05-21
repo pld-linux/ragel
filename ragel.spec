@@ -8,10 +8,16 @@ Group:		Development/Tools
 Source0:	http://www.colm.net/files/ragel/%{name}-%{version}.tar.gz
 # Source0-md5:	2ca4f5507c1923bcf9a7909baa8254d3
 URL:		http://www.colm.net/open-source/ragel/
+BuildRequires:	asciidoc
 BuildRequires:	colm = 0.14.7
 BuildRequires:	colm-devel = 0.14.7
+BuildRequires:	dblatex
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	libstdc++-devel
+BuildRequires:	libxml2-progs
+BuildRequires:	libxslt-progs
+BuildRequires:	texlive-format-pdflatex
+BuildRequires:	texlive-xetex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
